@@ -23,9 +23,36 @@ export function initCalculator() {
         const cups = cupsRange.value;
         const tier = subscriptionTiers[cups];
         
+        // Update display text
         cupsValueDisplay.innerText = cups === '5' ? '5 o más tazas' : `${cups} ${cups === '1' ? 'taza' : 'tazas'}`;
         supplyQtyDisplay.innerText = tier.label;
         supplyPriceDisplay.innerText = `$${tier.price.toFixed(2)}`;
+
+        // Polished Interaction: Color the range track up to current value
+        const min = cupsRange.min || 1;
+        const max = cupsRange.max || 5;
+        const percent = ((cups - min) / (max - min)) * 100;
+        cupsRange.style.background = `linear-gradient(to right, var(--color-terracotta) 0%, var(--color-terracotta) ${percent}%, rgba(252, 251, 250, 0.15) ${percent}%, rgba(252, 251, 250, 0.15) 100%)`;
+
+        // Polished Interaction: Highlight active label underneath range input
+        const labels = document.querySelectorAll('.range-labels span');
+        labels.forEach((label, index) => {
+            if (index === parseInt(cups) - 1) {
+                label.classList.add('active');
+            } else {
+                label.classList.remove('active');
+            }
+        });
+
+        // Polished Interaction: Trigger CSS pop animation on values
+        const animElements = [cupsValueDisplay, supplyQtyDisplay, supplyPriceDisplay];
+        animElements.forEach(el => {
+            if (el) {
+                el.classList.remove('animate-pop');
+                void el.offsetWidth; // Force DOM reflow to restart animation
+                el.classList.add('animate-pop');
+            }
+        });
     }
 
     cupsRange.addEventListener('input', updateCalculator);

@@ -443,10 +443,11 @@
 #cups-range {
     -webkit-appearance: none;
     width: 100%;
-    height: 4px;
+    height: 6px;
     background: rgba(252, 251, 250, 0.15);
-    border-radius: 2px;
+    border-radius: 6px;
     outline: none;
+    transition: background 0.1s ease;
 }
 
 #cups-range::-webkit-slider-thumb {
@@ -463,18 +464,41 @@
 
 #cups-range::-webkit-slider-thumb:hover {
     transform: scale(1.2);
+    background-color: var(--color-text-white);
+    box-shadow: 0 0 15px rgba(252, 251, 250, 0.6);
 }
 
 .range-labels {
     display: flex;
     justify-content: space-between;
-    padding: 0 4px;
+    padding: 8px 4px 0;
 }
 
 .range-labels span {
     font-size: 0.75rem;
     color: var(--color-text-muted);
     font-weight: 500;
+    transition: var(--transition-premium);
+    transform-origin: center;
+}
+
+.range-labels span.active {
+    color: var(--color-terracotta);
+    font-weight: 700;
+    transform: scale(1.15);
+    text-shadow: 0 0 10px rgba(217, 116, 87, 0.2);
+}
+
+/* Pop/Bounce Animation for calculator updates */
+@keyframes pop-in {
+    0% { transform: scale(0.92); opacity: 0.7; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pop {
+    animation: pop-in 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    display: inline-block;
 }
 
 .calc-value-display {
