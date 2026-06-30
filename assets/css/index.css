@@ -447,7 +447,17 @@
     background: rgba(252, 251, 250, 0.15);
     border-radius: 6px;
     outline: none;
-    transition: background 0.1s ease;
+    transition: var(--transition-premium); /* Smooth transition for height and shadows */
+}
+
+/* Polished: Track expands and glows when being active/dragged */
+#cups-range:hover,
+#cups-range:active {
+    height: 8px;
+}
+
+#cups-range:active {
+    animation: track-glow 1.5s infinite ease-in-out;
 }
 
 #cups-range::-webkit-slider-thumb {
@@ -462,10 +472,17 @@
     transition: var(--transition-premium);
 }
 
+/* Polished: Thumb grows, turns white, and glows intensely on drag */
 #cups-range::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
     background-color: var(--color-text-white);
-    box-shadow: 0 0 15px rgba(252, 251, 250, 0.6);
+    box-shadow: 0 0 15px rgba(252, 251, 250, 0.6), 0 0 8px var(--color-terracotta);
+}
+
+#cups-range:active::-webkit-slider-thumb {
+    transform: scale(1.3);
+    background-color: var(--color-text-white);
+    box-shadow: 0 0 20px rgba(252, 251, 250, 0.8), 0 0 12px var(--color-terracotta);
 }
 
 .range-labels {
@@ -487,6 +504,13 @@
     font-weight: 700;
     transform: scale(1.15);
     text-shadow: 0 0 10px rgba(217, 116, 87, 0.2);
+}
+
+/* Pulsing glow animation for the active range track */
+@keyframes track-glow {
+    0% { box-shadow: 0 0 8px rgba(217, 116, 87, 0.2); }
+    50% { box-shadow: 0 0 18px rgba(217, 116, 87, 0.5); }
+    100% { box-shadow: 0 0 8px rgba(217, 116, 87, 0.2); }
 }
 
 /* Pop/Bounce Animation for calculator updates */
