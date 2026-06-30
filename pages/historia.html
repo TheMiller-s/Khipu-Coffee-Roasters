@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia | Khipu Coffee Roasters</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/cart.css">
+    <link rel="stylesheet" href="../assets/css/historia.css">
+</head>
+<body>
+    <!-- Top banner -->
+    <div class="top-banner">
+        <p>Envío gratuito a todo el Ecuador por compras mayores a $35</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                KHIPU
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="historia.html" class="active">Nuestra Historia</a>
+                <a href="productos.html">Nuestros Cafés</a>
+                <a href="locales.html">Locales</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-toggle" aria-label="Ver Carrito">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- History Hero -->
+        <section class="history-hero">
+            <div class="container">
+                <h1>Nuestra Historia</h1>
+                <p>El camino del grano de café desde la montaña andina hasta tu taza</p>
+            </div>
+        </section>
+
+        <!-- Narrative Section -->
+        <section class="history-content-section">
+            <div class="container">
+                <!-- Block 1 -->
+                <div class="narrative-block">
+                    <div class="narrative-text">
+                        <span class="section-label">El Origen</span>
+                        <h2>Nacidos entre valles y volcanes</h2>
+                        <p>Khipu nació en 2024 con un propósito claro: redefinir la relación entre el consumidor y el productor de café en el Ecuador. En un país con una biodiversidad inigualable y microclimas perfectos para la caficultura, nos dimos cuenta de que gran parte del mejor café de especialidad era exportado, dejando al mercado local sin la oportunidad de degustar sus joyas nacionales.</p>
+                        <p>Iniciamos nuestro viaje recorriendo las laderas de Loja, los terrenos volcánicos de Imbabura y las exóticas fincas de Galápagos, entablando lazos directos con familias agricultoras comprometidas con procesos orgánicos y sostenibles.</p>
+                    </div>
+                    <div class="narrative-image-wrap">
+                        <div class="narrative-image" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop');"></div>
+                    </div>
+                </div>
+
+                <!-- Blockquote -->
+                <div class="quote-block">
+                    <blockquote>"El café no es solo un cultivo, es la memoria de nuestra tierra y el esfuerzo diario de manos ecuatorianas que labran el futuro."</blockquote>
+                    <cite>— Mateo Cueva, Productor de Café, Loja</cite>
+                </div>
+
+                <!-- Block 2 (Reverse Layout) -->
+                <div class="narrative-block reverse">
+                    <div class="narrative-text">
+                        <span class="section-label">El Tueste Artesanal</span>
+                        <h2>Un tributo a la precisión y el sabor</h2>
+                        <p>El nombre de nuestra marca proviene de los *khipus* incas, hilos anudados que registraban historias y cuentas. De manera similar, nosotros vemos cada lote de café como un nudo de sabor que entrelaza altitud, variedad y proceso.</p>
+                        <p>En nuestro laboratorio de tueste en Quito, analizamos la densidad, humedad y tamaño de cada grano. Tostamos artesanalmente en lotes pequeños utilizando perfiles de temperatura personalizados. Esto nos permite asegurar que las notas florales del Gesha de Puyango o la dulzura de panela del Caturra de Zaruma brillen con total claridad en tu taza.</p>
+                    </div>
+                    <div class="narrative-image-wrap">
+                        <div class="narrative-image" style="background-image: url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=800&auto=format&fit=crop');"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart" id="cart-close" aria-label="Cerrar Carrito">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container">
+            <p class="empty-cart-msg">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span id="cart-total-val">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="cart-checkout-btn">Proceder al pago con PayPhone</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <span class="logo">KHIPU</span>
+                <p>Café de Especialidad Ecuatoriano, tostado artesanalmente en Quito para preservar la riqueza de nuestra tierra.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Menú</h4>
+                <a href="../index.html">Inicio</a>
+                <a href="historia.html">Nuestra Historia</a>
+                <a href="productos.html">Nuestros Cafés</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fa-solid fa-envelope"></i> hola@khipucafe.ec</p>
+                <p><i class="fa-solid fa-phone"></i> +593 99 999 9999</p>
+                <p>Quito, Ecuador</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Khipu Coffee Roasters. Proyecto demo de especialidad.</p>
+        </div>
+    </footer>
+
+    <!-- Script entry point -->
+    <script type="module" src="../assets/js/historia.js"></script>
+</body>
+</html>

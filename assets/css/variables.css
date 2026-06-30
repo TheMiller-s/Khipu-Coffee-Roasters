@@ -1,0 +1,21 @@
+/* ==========================================
+   DESIGN TOKENS & SYSTEM VARIABLES
+   ========================================== */
+:root {
+    --color-bg-deep: #120e0c;       /* Rich dark coffee bean background */
+    --color-bg-card: #201714;       /* Warm roasted espresso cards */
+    --color-bg-input: #1a1210;      /* Darker field backgrounds */
+    --color-terracotta: #d97457;    /* Roasted clay/orange accent */
+    --color-gold: #dfb76c;          /* Pale gold / harvest sun */
+    --color-text-white: #fcfbfa;    /* Creamy white text */
+    --color-text-muted: #a89c96;    /* Sand/ash text */
+    
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', sans-serif;
+    
+    /* Animation & Border tokens */
+    --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --border-accent: rgba(217, 116, 87, 0.15);
+    --border-soft: rgba(252, 251, 250, 0.08);
+}

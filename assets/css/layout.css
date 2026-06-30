@@ -1,0 +1,296 @@
+/* ==========================================
+   GLOBAL RESET & BASIC LAYOUTS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-bg-deep);
+    color: var(--color-text-white);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Typography styles */
+h1, h2, h3, h4 {
+    color: var(--color-text-white);
+}
+
+.section-label {
+    display: block;
+    font-family: var(--font-serif);
+    color: var(--color-terracotta);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-premium);
+}
+
+.btn-primary {
+    background-color: var(--color-terracotta);
+    color: var(--color-bg-deep);
+    border: 1px solid var(--color-terracotta);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-terracotta);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-white);
+    border: 1px solid var(--border-soft);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-text-white);
+    transform: translateY(-2px);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* ==========================================
+   TOP BANNER & HEADER
+   ========================================== */
+.top-banner {
+    background-color: var(--color-terracotta);
+    color: var(--color-bg-deep);
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background: rgba(18, 14, 12, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-soft);
+    transition: var(--transition-premium);
+}
+
+.nav-container {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--color-text-white);
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.logo:hover {
+    color: var(--color-gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: var(--transition-premium);
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-text-white);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-terracotta);
+    transition: var(--transition-premium);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn {
+    background: transparent;
+    border: 1px solid var(--border-soft);
+    color: var(--color-text-white);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.1rem;
+    transition: var(--transition-premium);
+}
+
+.cart-btn:hover {
+    border-color: var(--color-terracotta);
+    color: var(--color-terracotta);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--color-terracotta);
+    color: var(--color-bg-deep);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+    border-top: 1px solid var(--border-soft);
+    padding: 80px 0 40px;
+    background-color: #0b0807;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-brand p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-top: 16px;
+    max-width: 320px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition-premium);
+}
+
+.footer-links a:hover {
+    color: var(--color-terracotta);
+}
+
+.footer-contact p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact i {
+    color: var(--color-terracotta);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-soft);
+    padding-top: 30px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (GLOBAL)
+   ========================================== */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* simple hidden for mobile for now */
+    }
+}

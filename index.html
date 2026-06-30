@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khipu Coffee Roasters | Café de Especialidad Ecuatoriano</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Modular Stylesheets -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+    <!-- Top banner -->
+    <div class="top-banner">
+        <p>Envío gratuito a todo el Ecuador por compras mayores a $35</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                KHIPU
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">Inicio</a>
+                <a href="pages/historia.html">Nuestra Historia</a>
+                <a href="pages/productos.html">Nuestros Cafés</a>
+                <a href="pages/locales.html">Locales</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-toggle" aria-label="Ver Carrito">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-content">
+                <span class="hero-subtitle">Café de Especialidad de Altura</span>
+                <h1>Tostado en origen para preservar el alma de los Andes</h1>
+                <p>Granos cultivados a más de 1,800 metros de altura en Loja, Galápagos y Zaruma. Seleccionados a mano y tostados artesanalmente en pequeños lotes semanales.</p>
+                <div class="hero-buttons">
+                    <a href="pages/productos.html" class="btn btn-primary">Comprar Granos</a>
+                    <a href="#suscripcion" class="btn btn-secondary">Suscribirse al Club</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span class="mouse-scroll"></span>
+                <span>Explorar</span>
+            </div>
+        </section>
+
+        <!-- Origin / Manifesto Section -->
+        <section id="origen" class="manifesto-section">
+            <div class="container manifesto-grid">
+                <div class="manifesto-text">
+                    <span class="section-label">Nuestra Filosofía</span>
+                    <h2>Comercio ético, trazabilidad total y pasión por la taza perfecta</h2>
+                    <p>En Khipu (del quichua, el sistema de nudos para contar historias), cada grano cuenta el relato de la familia que lo cultivó. Trabajamos bajo un modelo de comercio directo, pagando hasta un 40% más que el precio del mercado justo para garantizar la sostenibilidad de nuestros caficultores ecuatorianos.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fa-solid fa-mountain-sun"></i></span>
+                            <div>
+                                <h4>Origen Único (Single Origin)</h4>
+                                <p>Trazabilidad completa hasta la finca de origen y el nombre del productor.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fa-solid fa-fire"></i></span>
+                            <div>
+                                <h4>Tueste Fresco Semanal</h4>
+                                <p>Tostamos únicamente bajo pedido para asegurar frescura y notas óptimas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="manifesto-visual">
+                    <div class="visual-card-wrap">
+                        <div class="visual-card">
+                            <div class="card-bg-mock"></div>
+                            <div class="badge-altitude">1,950 msnm</div>
+                            <h3>Finca El Paraíso</h3>
+                            <p>Chaguarpamba, Loja</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Preview Section -->
+        <section id="tienda" class="shop-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">La Colección de Altura</span>
+                    <h2>Nuestros Cafés de Especialidad</h2>
+                    <p>Micro-lotes tostados con precisión para resaltar la dulzura natural y las notas ácidas frutales de nuestro terroir.</p>
+                </div>
+
+                <div class="shop-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card" data-id="1" data-name="Loja Typica Mejorada" data-price="14.50">
+                        <div class="product-visual">
+                            <div class="product-bag-mock text-accent-1">
+                                <span class="origin-tag">Loja</span>
+                                <i class="fa-solid fa-mug-hot"></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span>Proceso: Lavado</span>
+                                <span>1,900 msnm</span>
+                            </div>
+                            <h3>Loja Typica Mejorada</h3>
+                            <p class="product-notes">Notas a jazmín, durazno maduro y miel de caña. Acidez cítrica brillante.</p>
+                            <div class="product-purchase">
+                                <span class="price">$14.50 <small>/ 250g</small></span>
+                                <button class="btn-add-cart">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card" data-id="2" data-name="Galápagos Bourbon Rojo" data-price="18.00">
+                        <div class="product-visual">
+                            <div class="product-bag-mock text-accent-2">
+                                <span class="origin-tag">San Cristóbal</span>
+                                <i class="fa-solid fa-seedling"></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span>Proceso: Natural</span>
+                                <span>850 msnm (Clima Microbiano)</span>
+                            </div>
+                            <h3>Galápagos Bourbon Rojo</h3>
+                            <p class="product-notes">Notas a chocolate oscuro, cáscara de naranja y nueces tostadas. Cuerpo sedoso.</p>
+                            <div class="product-purchase">
+                                <span class="price">$18.00 <small>/ 250g</small></span>
+                                <button class="btn-add-cart">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card" data-id="3" data-name="Zaruma Caturra Clásico" data-price="11.00">
+                        <div class="product-visual">
+                            <div class="product-bag-mock text-accent-3">
+                                <span class="origin-tag">Zaruma</span>
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span>Proceso: Honey</span>
+                                <span>1,600 msnm</span>
+                            </div>
+                            <h3>Zaruma Caturra Clásico</h3>
+                            <p class="product-notes">Notas a panela, frutos rojos y vainilla. Cuerpo cremoso y balanceado.</p>
+                            <div class="product-purchase">
+                                <span class="price">$11.00 <small>/ 250g</small></span>
+                                <button class="btn-add-cart">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="pages/productos.html" class="btn btn-secondary">Ver Catálogo Completo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription Section -->
+        <section id="suscripcion" class="sub-section">
+            <div class="container sub-grid">
+                <div class="sub-calculator-card">
+                    <h3>Calculador del Club Khipu</h3>
+                    <p class="sub-card-intro">Personaliza tu suscripción mensual según tus hábitos de consumo.</p>
+                    
+                    <div class="calc-group">
+                        <label for="cups-range">¿Cuántas tazas toman en casa al día?</label>
+                        <div class="range-wrapper">
+                            <input type="range" id="cups-range" min="1" max="5" value="2" step="1">
+                            <div class="range-labels">
+                                <span>1 taza</span>
+                                <span>2 tazas</span>
+                                <span>3 tazas</span>
+                                <span>4 tazas</span>
+                                <span>5+ tazas</span>
+                            </div>
+                        </div>
+                        <div class="calc-value-display">
+                            <span id="cups-value">2 tazas</span> al día.
+                        </div>
+                    </div>
+
+                    <div class="calc-group">
+                        <label for="grind-select">Tipo de Molienda:</label>
+                        <select id="grind-select">
+                            <option value="grano">Grano Entero (Recomendado)</option>
+                            <option value="espresso">Molido Fino (Espresso)</option>
+                            <option value="filtro">Molido Medio (Goteo / V60 / Cafetera)</option>
+                            <option value="prensa">Molido Grueso (Prensa Francesa)</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-results">
+                        <div class="result-item">
+                            <span>Suministro mensual:</span>
+                            <strong id="supply-qty">2 bolsas de 250g</strong>
+                        </div>
+                        <div class="result-item">
+                            <span>Precio mensual (envío incl.):</span>
+                            <strong class="text-terracotta" id="supply-price">$26.00</strong>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" id="btn-subscribe">Suscribirme al Club</button>
+                </div>
+
+                <div class="sub-info-content">
+                    <span class="section-label">El Club del Café</span>
+                    <h2>El mejor café de Ecuador, directo a tu puerta, sin preocuparte por el stock</h2>
+                    <p>Únete a nuestra suscripción de café mensual. Recibe bolsas frescas de diferentes micro-lotes directamente del tueste a tu hogar, con envío prioritario en todo el Ecuador.</p>
+                    
+                    <div class="sub-perks">
+                        <div class="perk-item">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Cancela o pausa en cualquier momento con un clic.</span>
+                        </div>
+                        <div class="perk-item">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Acceso a micro-lotes exclusivos para miembros del club.</span>
+                        </div>
+                        <div class="perk-item">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Incluye folletos informativos sobre el productor y notas de cata.</span>
+                        </div>
+                        <div class="perk-item">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Envío nacional express incluido en la tarifa.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart" id="cart-close" aria-label="Cerrar Carrito">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container">
+            <p class="empty-cart-msg">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span id="cart-total-val">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="cart-checkout-btn">Proceder al pago con PayPhone</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <span class="logo">KHIPU</span>
+                <p>Café de Especialidad Ecuatoriano, tostado artesanalmente en Quito para preservar la riqueza de nuestra tierra.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Menú</h4>
+                <a href="#">Inicio</a>
+                <a href="pages/historia.html">Nuestra Historia</a>
+                <a href="pages/productos.html">Nuestros Cafés</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fa-solid fa-envelope"></i> hola@khipucafe.ec</p>
+                <p><i class="fa-solid fa-phone"></i> +593 99 999 9999</p>
+                <p>Quito, Ecuador</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Khipu Coffee Roasters. Proyecto demo de especialidad.</p>
+        </div>
+    </footer>
+
+    <!-- Script entry point -->
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

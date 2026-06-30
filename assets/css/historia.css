@@ -1,0 +1,137 @@
+/* ==========================================
+   NUESTRA HISTORIA SPECIFIC CSS
+   ========================================== */
+.history-hero {
+    position: relative;
+    padding: 160px 0 100px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(18, 14, 12, 0.4) 0%, var(--color-bg-deep) 100%),
+                url('https://images.unsplash.com/photo-1524350876685-274059332603?q=80&w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.history-hero h1 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.history-hero p {
+    color: var(--color-gold);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.history-content-section {
+    padding: 100px 0;
+}
+
+.narrative-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.narrative-block.reverse .narrative-text {
+    order: 2;
+}
+
+.narrative-block.reverse .narrative-image-wrap {
+    order: 1;
+}
+
+.narrative-text h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.narrative-text p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.narrative-image-wrap {
+    position: relative;
+}
+
+.narrative-image-wrap::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-terracotta);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.narrative-image {
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.quote-block {
+    background-color: var(--color-bg-card);
+    border-left: 3px solid var(--color-terracotta);
+    border-right: 1px solid var(--border-soft);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 40px;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 100px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.quote-block blockquote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    color: var(--color-text-white);
+    margin-bottom: 20px;
+}
+
+.quote-block cite {
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .narrative-block {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .narrative-block.reverse .narrative-text {
+        order: 1;
+    }
+    
+    .narrative-block.reverse .narrative-image-wrap {
+        order: 2;
+    }
+}
