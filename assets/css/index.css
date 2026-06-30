@@ -443,19 +443,14 @@
 #cups-range {
     -webkit-appearance: none;
     width: 100%;
-    height: 6px;
-    background: rgba(252, 251, 250, 0.15);
-    border-radius: 6px;
+    height: 14px; /* Thick volume HUD bar */
+    background: transparent;
+    border-radius: 2px; /* Rectangular HUD cells */
     outline: none;
-    transition: var(--transition-premium); /* Smooth transition for height and shadows */
+    transition: var(--transition-premium);
 }
 
-/* Polished: Track expands and glows when being active/dragged */
-#cups-range:hover,
-#cups-range:active {
-    height: 8px;
-}
-
+/* Polished: Track glows when active/dragged */
 #cups-range:active {
     animation: track-glow 1.5s infinite ease-in-out;
 }
@@ -463,32 +458,33 @@
 #cups-range::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--color-terracotta);
+    width: 10px; /* Vertical HUD pill thumb */
+    height: 26px;
+    border-radius: 2px; /* Rectangular slider indicator */
+    background: var(--color-text-white);
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(217, 116, 87, 0.4);
+    box-shadow: 0 0 10px rgba(252, 251, 250, 0.6);
     transition: var(--transition-premium);
+    border: none;
 }
 
-/* Polished: Thumb grows, turns white, and glows intensely on drag */
+/* Polished: Thumb grows vertically and glows on hover/active */
 #cups-range::-webkit-slider-thumb:hover {
-    transform: scale(1.15);
-    background-color: var(--color-text-white);
-    box-shadow: 0 0 15px rgba(252, 251, 250, 0.6), 0 0 8px var(--color-terracotta);
+    height: 30px;
+    background-color: var(--color-gold);
+    box-shadow: 0 0 15px rgba(223, 183, 108, 0.8), 0 0 8px var(--color-terracotta);
 }
 
 #cups-range:active::-webkit-slider-thumb {
-    transform: scale(1.3);
-    background-color: var(--color-text-white);
-    box-shadow: 0 0 20px rgba(252, 251, 250, 0.8), 0 0 12px var(--color-terracotta);
+    height: 34px;
+    background-color: var(--color-gold);
+    box-shadow: 0 0 25px rgba(223, 183, 108, 1), 0 0 12px var(--color-terracotta);
 }
 
 .range-labels {
     display: flex;
     justify-content: space-between;
-    padding: 8px 4px 0;
+    padding: 12px 4px 0; /* More spacing for HUD */
 }
 
 .range-labels span {
@@ -509,7 +505,7 @@
 /* Pulsing glow animation for the active range track */
 @keyframes track-glow {
     0% { box-shadow: 0 0 8px rgba(217, 116, 87, 0.2); }
-    50% { box-shadow: 0 0 18px rgba(217, 116, 87, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(217, 116, 87, 0.4); }
     100% { box-shadow: 0 0 8px rgba(217, 116, 87, 0.2); }
 }
 
