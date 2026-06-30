@@ -28,28 +28,11 @@ export function initCalculator() {
         supplyQtyDisplay.innerText = tier.label;
         supplyPriceDisplay.innerText = `$${tier.price.toFixed(2)}`;
 
-        // Polished HUD Volume Bar: Draw 5 distinct volume segments
-        const activeColor = 'var(--color-terracotta)';
-        const inactiveColor = 'rgba(252, 251, 250, 0.1)';
-        const segments = [];
-        const segmentWidth = 18; // 18% width per bar
-        const gapWidth = 2.5;    // 2.5% gap between bars (total 100%)
-        
-        for (let i = 1; i <= 5; i++) {
-            const start = (i - 1) * (segmentWidth + gapWidth);
-            const end = start + segmentWidth;
-            const color = i <= cups ? activeColor : inactiveColor;
-            
-            segments.push(`${color} ${start}%`);
-            segments.push(`${color} ${end}%`);
-            
-            if (i < 5) {
-                segments.push(`transparent ${end}%`);
-                segments.push(`transparent ${start + segmentWidth + gapWidth}%`);
-            }
-        }
-        
-        cupsRange.style.background = `linear-gradient(to right, ${segments.join(', ')})`;
+        // Polished Interaction: Color the range track up to current value
+        const min = cupsRange.min || 1;
+        const max = cupsRange.max || 5;
+        const percent = ((cups - min) / (max - min)) * 100;
+        cupsRange.style.background = `linear-gradient(to right, var(--color-terracotta) 0%, var(--color-terracotta) ${percent}%, rgba(252, 251, 250, 0.15) ${percent}%, rgba(252, 251, 250, 0.15) 100%)`;
 
         // Polished Interaction: Highlight active label underneath range input
         const labels = document.querySelectorAll('.range-labels span');
